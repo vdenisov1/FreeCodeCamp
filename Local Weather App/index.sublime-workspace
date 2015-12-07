@@ -1,0 +1,428 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"consing",
+				"consignee_info_width"
+			],
+			[
+				"width",
+				"width_width"
+			],
+			[
+				"abso",
+				"absolute_top"
+			],
+			[
+				"abs",
+				"absolute_top"
+			],
+			[
+				"abo",
+				"absolute_top"
+			],
+			[
+				"absol",
+				"absolute_bottom"
+			],
+			[
+				"package",
+				"package_name_width"
+			],
+			[
+				"wid",
+				"width_width"
+			],
+			[
+				"packag",
+				"package_name_width"
+			],
+			[
+				"packa",
+				"package_name_width"
+			],
+			[
+				"consign",
+				"consignee_info_width"
+			],
+			[
+				"shipp",
+				"shipper_info_height"
+			],
+			[
+				"carrier",
+				"carrier_info_height"
+			],
+			[
+				"carri",
+				"carrier_info_width"
+			],
+			[
+				"shipper_info",
+				"shipper_info_width"
+			],
+			[
+				"total_",
+				"total_pieces"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"last_filter": "set syntax: c++",
+		"selected_items":
+		[
+			[
+				"set syntax: c++",
+				"Set Syntax: C++"
+			],
+			[
+				"Package Control: Inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/vdenisov/Desktop/Development/test/MF",
+		"/Users/vdenisov/Desktop/Development/test/PDF/Gemfile",
+		"/Users/vdenisov/Desktop/Development/test/PDF/test.rb",
+		"/Users/vdenisov/Desktop/Development/MF/app/views/layouts/header/_header.html.erb",
+		"/Users/vdenisov/Desktop/Development/MF/app/views/layouts/rss/_rss_news_feed.html.erb",
+		"/Users/vdenisov/Desktop/Development/MF/config/routes.rb",
+		"/Users/vdenisov/Desktop/school/6300Fall15Team65/TeamInfo.txt",
+		"/Users/vdenisov/Desktop/school/User2/6300Fall15vdenisov3/.git/MERGE_MSG",
+		"/Users/vdenisov/Desktop/school/6300Fall15vdenisov3/.git/MERGE_MSG",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/static_pages/index.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/controllers/blog/content_controller.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/controllers/blog/blog_controller.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/blog/content/new.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/config/routes.rb",
+		"/Users/vdenisov/Desktop/DEV/BLOG/MF",
+		"/Users/vdenisov/Desktop/DEV/SHQ/db/migrate/20150721000851_create_blog_posts.rb",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/config/environments/development.rb",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/app/views/layouts/_header.html.erb",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/Gemfile",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/config/routes.rb",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/app/views/layouts/application.html.erb",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/app/assets/javascripts/application.js",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/app/assets/stylesheets/application.scss",
+		"/Users/vdenisov/Desktop/DEV/VGAUTO/config/database.yml",
+		"/Users/vdenisov/.profile",
+		"/Users/vdenisov/Downloads/AG1.3.mq4",
+		"/Users/vdenisov/Dropbox/Personal Finances/Transaction_Summary_YTD.xlsx",
+		"/Users/vdenisov/Desktop/DEV/PHARM/app/assets/javascripts/application.js",
+		"/Users/vdenisov/Desktop/DEV/PHARM/app/views/layouts/_drug_preview.html.erb",
+		"/Users/vdenisov/Desktop/DEV/PHARM/app/helpers/app_helper.rb",
+		"/Users/vdenisov/Desktop/DEV/PHARM/app/views/drug/new.html.erb",
+		"/Users/vdenisov/Desktop/DEV/PHARM/app/views/layouts/application.html.erb",
+		"/Users/vdenisov/Desktop/DEV/PHARM/app/helpers/drug_helper.rb",
+		"/Users/vdenisov/Desktop/DEV/PHARM/config/database.yml",
+		"/Users/vdenisov/Desktop/DEV/PHARM/db/migrate/20150618011131_create_users.rb",
+		"/Users/vdenisov/Desktop/DEV/MF/public/404.html",
+		"/Users/vdenisov/Desktop/DEV/MF/public/422.html",
+		"/Users/vdenisov/Desktop/DEV/MF/public/500.html",
+		"/Users/vdenisov/Desktop/DEV/MF/app/assets/stylesheets/parallax_classic.css.scss",
+		"/Users/vdenisov/Desktop/DEV/MF/app/assets/stylesheets/style.css.scss",
+		"/Users/vdenisov/Desktop/DEV/MF/app/views/layouts/header/_slideshow.html.erb",
+		"/Users/vdenisov/Desktop/DEV/MF/config/routes.rb",
+		"/Users/vdenisov/Desktop/DEV/MF/app/views/static_pages/home.html.erb",
+		"/Users/vdenisov/Desktop/DEV/MF/app/views/layouts/header/_slider_init.html.erb",
+		"/Users/vdenisov/Desktop/DEV/MF/app/views/static_pages/about.html.erb",
+		"/Users/vdenisov/Desktop/DEV/MF/app/views/static_pages/services.html.erb",
+		"/Users/vdenisov/Desktop/DEV/MF/app/assets/stylesheets/shortcodes.css.scss",
+		"/Users/vdenisov/Desktop/DEV/MF/app/assets/javascripts/custom.js",
+		"/Users/vdenisov/Desktop/DEV/MF/app/views/layouts/_carousel.html.erb",
+		"/Users/vdenisov/Desktop/DEV/MF/app/views/layouts/application.html.erb",
+		"/Users/vdenisov/.bash_profile",
+		"/Users/vdenisov/.bashrc",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/models/shipment.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/layouts/_folio_plugin.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/ltl_shipments/new.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/helpers/ltl_shipments_helper.rb",
+		"/Users/vdenisov/Google Drive/Development/EVOLVE - Responsive Multi-Purpose HTML Template/HTML/tools/captcha/captcha.php",
+		"/Users/vdenisov/Desktop/DEV/SHQ/.git/MERGE_MSG",
+		"/Users/vdenisov/Desktop/DEV/SHQ/config/application.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/lib/assets/carrier_rate/rate_my_shipment.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/lib/assets/carrier_rate/quote_rate.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/ltl_shipments/create_booking.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/models/address_book.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/models/user.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/tms/change_password.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/controllers/tms_controller.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/layouts/header/_top_menu.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/controllers/ltl_shipments_controller.rb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/layouts/application.html.erb",
+		"/Users/vdenisov/Desktop/DEV/SHQ/app/views/tms/show.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/layouts/_header.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/models/air_transport.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/models/contact.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/models/ground_transport.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/auto_parts_clearance/new_shipment.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/auto_parts_clearance/estimate.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/models/shipment.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/auto_parts_clearance/new_quote.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/controllers/auto_parts_clearance_controller.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/assets/javascripts/application.js",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/trucking/new_shipment.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/controllers/trucking_controller.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/test/GlobalForwardingCrawler.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/trucking/new_quote.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/helpers/global_forwarding.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/helpers/customs_clearance.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/.git/MERGE_MSG",
+		"/Users/vdenisov/Desktop/crawlers/spider.rb",
+		"/Users/vdenisov/Desktop/crawlers/test.txt",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/spec/spec_helper.rb",
+		"/Users/vdenisov/Desktop/crawlers/central_dispatch.rb",
+		"/Users/vdenisov/Desktop/spider.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/spec/test/carrier_rate.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/config/database.yml",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/static_pages/_quote.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/orders/create.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/controllers/orders_controller.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/config/routes.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/static_pages/order_confirmation.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/orders/verify_shipment.html.erb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/.gitignore",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/controllers/static_pages_controller.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/helpers/orders_helper.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/models/ship_order.rb",
+		"/Users/vdenisov/Desktop/TranzCargo/TranzCargo/app/views/orders/ship_new.html.erb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/spec/requests/user_pages_spec.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/config/environments/development.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/assets/javascripts/application.js",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/views/layouts/_header.html.erb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/vendor/assets/javascripts/vendor_js.js",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/helpers/sessions_helper.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/views/sessions/new.html.erb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/controllers/users_controller.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/spec/requests/authentication_pages_spec.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/config/routes.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/controllers/sessions_controller.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/views/layouts/application.html.erb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/db/migrate/20140627013725_add_remember_token_to_users.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/controllers/application_controller.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/spec/models/user_spec.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/app/models/user.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/config/database.yml",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/spec/requests/static_pages_spec.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/spec/spec_helper.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/Gemfile",
+		"/Users/vdenisov/.rvm/gems/ruby-1.9.3-p547/gems/activerecord-4.0.5/lib/active_record/connection_adapters/connection_specification.rb",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/.gitignore",
+		"/Users/vdenisov/Desktop/rails_projects/sample_app/Gemfile.lock"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lastSellCount",
+			"lastBuyCount",
+			"prb",
+			"Sell(",
+			"s",
+			"buy",
+			"lastSell",
+			"lastBuy",
+			"sell(",
+			"buy(",
+			"b",
+			"ls",
+			"lb",
+			"was",
+			"today",
+			"timec",
+			"timex",
+			"timeclose",
+			"startTime",
+			"TimeStart",
+			"timec",
+			"timeClose",
+			"timex",
+			"closeTime",
+			"mode",
+			"fprice",
+			"MAperiod15",
+			"MAperiod5",
+			"StartDist",
+			"Tp1",
+			"Sl2",
+			"Sl1",
+			"OrderCurrentTimelose",
+			"timex",
+			"timec",
+			"Tp1",
+			"Sl2",
+			"Sl1",
+			"closeTime",
+			"col-xs-4",
+			"form_for",
+			"s_type",
+			"shipment_details",
+			"pickup_details",
+			"total_weight",
+			"txtZipLocator",
+			"sql",
+			"pg"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"maPeriod15",
+			"maPeriod5",
+			"startDist",
+			"takeProfit1",
+			"stopLoss2",
+			"stopLoss1",
+			"CurrentTime",
+			"TakeProfit1",
+			"StopLoss2",
+			"StopLoss1",
+			"TimeClose",
+			"col-xs-12"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 167.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Local Weather</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Font Awesome Fonts -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Main CSS Styling -->
+		<link rel="stylesheet" href="styles.css">
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		
+		<!-- jQuery Minified JS File -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- Bootstrap JS File -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- jQuery Rotate Functionality -->
+		<script src="https://raw.githubusercontent.com/wilq32/jqueryrotate/master/jQueryRotate.js"></script>
+		<!-- Main Javascript File -->
+		<script src="main.js"></script>
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">Local Weather</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container content">
+			<div class="row">
+				<div class="center-div text-center" id="weather">
+					<div class=" icon float-left"><img src="" class="icon-image" alt=""></div>
+					<div class="float-left" id="temperature">
+						<div class="float-left" id="degrees"><span class="digits">....</span>&deg;</div>
+						<div id="units" class="float-left">
+							<div class="active float-left unit" id="celcius">C</div>
+							<div class="float-left unit" id="fahrenheit">F</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="center-div text-center" id="additional-weather">
+					<div id="location" class="float-left">....</div>
+					<div id="forecast" class="float-left">....</div>
+					<div id="wind" class="float-left">....</div>
+				</div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-fixed-bottom navbar-inverse text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<footer class="text-white">All rights reserved.</footer>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</body>
+</html>

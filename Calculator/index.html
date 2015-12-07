@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript Calculator</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Font Awesome Fonts -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Main CSS Styling -->
+		<link rel="stylesheet" href="styles.css">
+		<!-- jQuery Minified JS File -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- Bootstrap JS File -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- jQuery Rotate Functionality -->
+		<script src="https://raw.githubusercontent.com/wilq32/jqueryrotate/master/jQueryRotate.js"></script>
+		<!-- Main Javascript File -->
+		<script src="main.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">Javascript Calculator</a>
+				</div>
+			</div>
+		</nav>
+
+	<div class="container content">
+		<div class="row">
+			<div class="calculator">
+				<div class="header">
+					<h3>FreeCodeCamp</h3>
+					<h5>Calculator</h5>
+				</div>
+				
+				<div class="display">
+					
+				</div>
+
+				<div class="buttons">
+					<div class="column">
+						<div class="button action" id="AC">AC</div>
+						<div class="button digit" id="7">7</div>
+						<div class="button digit" id="4">4</div>
+						<div class="button digit" id="1">1</div>
+						<div class="button digit" id="0">0</div>
+					</div>
+					<div class="column">
+						<div class="button action" id="CE">CE</div>
+						<div class="button digit" id="8">8</div>
+						<div class="button digit" id="5">5</div>
+						<div class="button digit" id="2">2</div>
+						<div class="button digit" id=".">.</div>
+					</div>
+					<div class="column">
+						<div class="button operator" id="modulo">&#37;</div>
+						<div class="button digit" id="9">9</div>
+						<div class="button digit" id="6">6</div>
+						<div class="button digit" id="3">3</div>
+						<div class="button action" id="equal">=</div>
+					</div>
+					<div class="column">
+						<div class="button operator" id="divide">&divide;</div>
+						<div class="button operator" id="multiply">&times;</div>
+						<div class="button operator" id="minus">&#45;</div>
+						<div class="button operator button-2x" id="add">&#43;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hidden" id="calculations"></div>
+	</div>
+
+		<nav class="navbar navbar-fixed-bottom navbar-inverse text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<footer class="text-white">All rights reserved.</footer>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</body>
+</html>

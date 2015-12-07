@@ -1,0 +1,127 @@
+{
+    "batchcomplete": "",
+    "continue": {
+        "gsroffset": 10,
+        "continue": "gsroffset||"
+    },
+    "query": {
+        "pages": {
+            "8290686": {
+                "pageid": 8290686,
+                "ns": 0,
+                "title": "Cave lion",
+                "index": 6,
+                "extract": "Cave lions are large extinct carnivorous felids that are classified either as subspecies of the lion (Panthera leo) or as distinct but closely related species, depending on the authority."
+            },
+            "740205": {
+                "pageid": 740205,
+                "ns": 0,
+                "title": "Chinese guardian lions",
+                "index": 9,
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/National_Palace_Museum_RightSide_Lion.JPG/50px-National_Palace_Museum_RightSide_Lion.JPG",
+                    "width": 50,
+                    "height": 38
+                },
+                "pageimage": "National_Palace_Museum_RightSide_Lion.JPG",
+                "extract": "Chinese guardian lions or Imperial guardian lions, traditionally known in Chinese simply as Shi (Chinese: \u7345; pinyin: sh\u012b; literally: \"lion\"), and often called \"Foo Dogs\" in the West, are a common representation of the lion in pre-modern China."
+            },
+            "2339219": {
+                "pageid": 2339219,
+                "ns": 0,
+                "title": "Eagle-Lion Films",
+                "index": 5,
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/%22Eagle-Lion_Films%22.jpg/50px-%22Eagle-Lion_Films%22.jpg",
+                    "width": 50,
+                    "height": 41
+                },
+                "pageimage": "\"Eagle-Lion_Films\".jpg",
+                "extract": "Eagle-Lion Films was a British film production company owned by J."
+            },
+            "36896": {
+                "pageid": 36896,
+                "ns": 0,
+                "title": "Lion",
+                "index": 1,
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/50px-Lion_waiting_in_Namibia.jpg",
+                    "width": 50,
+                    "height": 38
+                },
+                "pageimage": "Lion_waiting_in_Namibia.jpg",
+                "extract": "The lion (Panthera leo) is one of the five big cats in the genus Panthera and a member of the family Felidae."
+            },
+            "42835190": {
+                "pageid": 42835190,
+                "ns": 0,
+                "title": "Lion (disambiguation)",
+                "index": 3,
+                "extract": "The lion is a big cat of the species Panthera leo that inhabits the African continent and one forest in India."
+            },
+            "1983509": {
+                "pageid": 1983509,
+                "ns": 0,
+                "title": "Lion taming",
+                "index": 4,
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Lion_tamer_%28LOC_pga.03749%29.jpg/50px-Lion_tamer_%28LOC_pga.03749%29.jpg",
+                    "width": 50,
+                    "height": 36
+                },
+                "pageimage": "Lion_tamer_(LOC_pga.03749).jpg",
+                "extract": "Lion taming is the taming and training of lions, either for protection, or more commonly, entertainment, particularly in the circus."
+            },
+            "201485": {
+                "pageid": 201485,
+                "ns": 0,
+                "title": "Lithium-ion battery",
+                "index": 2,
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Nokia_Battery.jpg/50px-Nokia_Battery.jpg",
+                    "width": 50,
+                    "height": 36
+                },
+                "pageimage": "Nokia_Battery.jpg",
+                "extract": "A lithium-ion battery (sometimes Li-ion battery or LIB) is a member of a family of rechargeable battery types in which lithium ions move from the negative electrode to the positive electrode during discharge and back when charging."
+            },
+            "161302": {
+                "pageid": 161302,
+                "ns": 0,
+                "title": "Napier Lion",
+                "index": 8,
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Napier_Lion_II.jpg/50px-Napier_Lion_II.jpg",
+                    "width": 50,
+                    "height": 33
+                },
+                "pageimage": "Napier_Lion_II.jpg",
+                "extract": "The Napier Lion was a 12-cylinder broad arrow configuration aircraft engine built by Napier & Son starting in 1917, and ending in the 1930s."
+            },
+            "20834020": {
+                "pageid": 20834020,
+                "ns": 0,
+                "title": "The Lion (mountain)",
+                "index": 7,
+                "extract": "The Lion is a mountain in South West Tasmania."
+            },
+            "88678": {
+                "pageid": 88678,
+                "ns": 0,
+                "title": "The Lion King",
+                "index": 10,
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/The_Lion_King_poster.jpg/33px-The_Lion_King_poster.jpg",
+                    "width": 33,
+                    "height": 50
+                },
+                "pageimage": "The_Lion_King_poster.jpg",
+                "extract": "The Lion King is a 1994 American animated epic musical film produced by Walt Disney Feature Animation and released by Walt Disney Pictures."
+            }
+        }
+    },
+    "limits": {
+        "pageimages": 50,
+        "extracts": 20
+    }
+}

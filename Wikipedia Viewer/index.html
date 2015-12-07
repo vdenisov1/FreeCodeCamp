@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Wikipedia Viewer</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Font Awesome Fonts -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Main CSS Styling -->
+		<link rel="stylesheet" href="styles.css">
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>		
+		<!-- jQuery Minified JS File -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- Bootstrap JS File -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- jQuery Rotate Functionality -->
+		<script src="https://raw.githubusercontent.com/wilq32/jqueryrotate/master/jQueryRotate.js"></script>
+		<!-- Main Javascript File -->
+		<script src="main.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">Wikipedia Viewer</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container content">
+			<div class="row float-left relative full-width">
+				<h4 class="help-text text-center">Click icon to search!</h4>
+				<div class="search-section disabled">
+					<input type="text" class="search hidden">
+					<i class="fa fa-times hidden"></i>
+
+					<i class="fa fa-search fa-3x"></i>
+					<a class="btn btn-info btn-xs hidden" id="lucky-search">Feeling Lucky?</a>
+				</div>
+			</div>
+
+			<div class="row" id="results">
+			</div>
+		</div>
+
+		<nav class="navbar navbar-fixed-bottom navbar-inverse text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<footer class="text-white">All rights reserved.</footer>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</body>
+</html>

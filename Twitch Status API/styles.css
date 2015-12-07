@@ -1,0 +1,199 @@
+body{
+  background-color: rgb(255,151,151);
+}
+
+footer>a:not(:first-child){
+  margin-left: 5px;
+}
+
+footer.footer-right{
+  float: right;
+  margin-right: 10px;
+}
+
+nav{
+  z-index: 100;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  footer{
+    float: none !important;
+    text-align: center !important;
+  }
+}
+
+.red{
+  color: red !important;
+}
+
+.green{
+  color: green !important;
+}
+
+.text-white{
+  color: white;
+}
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+.relative{
+  position: relative;
+}
+
+.content{
+  padding-top:75px;
+  padding-bottom:75px;
+  margin-top: 25px;
+}
+
+.widget{
+  margin: 0px auto;
+  padding: 5px;
+  width: 360px;
+}
+
+.widget-content{
+  background-color: white;
+  border: solid white 3px;
+  z-index: 10;
+  overflow: hidden;
+  border-radius: 25px;
+  width:100%;
+  position:relative;
+  float:left;
+}
+
+.menu-button{
+  width: 114px;
+  height: 30px;
+  padding-top: 10px;
+  float:left;
+  text-align: center;
+  background-color: rgb(214,170,170);
+  height: 50px;
+  cursor: pointer;
+  font-family: 'PT Sans Caption';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu-button.active{
+  background-color: rgb(232,67,67) !important;
+  color: white !important;
+  border-bottom: solid 5px black !important;
+}
+
+.search{
+  padding: 25px 5px;
+  border-bottom: solid 2px grey;
+}
+
+.search-bar{
+  border: solid 1px grey;
+  border-radius: 150px;
+  width: 328px;
+  height: 25px;
+}
+
+.search-bar > i{
+  margin: 4px 10px 0px 10px;
+}
+
+.search-bar > input{
+  width: 280px;
+  height: 100%;
+  border: none;
+}
+
+div.menu-button:nth-child(2){
+  width: 116px !important;
+  border-style: solid;
+  border-color: white;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+}
+
+.profile-icon{
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+  border-radius: 50%;
+  float: left;
+  position: relative;
+}
+
+.twitch-users > a > .user > .username{
+  margin-left: 20px;
+  margin-top: 7px;
+  font-size: 21px;
+  position: relative;
+  float: left;
+}
+
+.twitch-users > a.online > .user > .username{
+  margin-top: 0px !important;
+}
+
+span.stream-title{
+  font-size: 11px;
+  display: block;
+}
+
+.twitch-users{
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 15px;
+}
+
+.twitch-users .user{
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.twitch-users li{
+  float: left;
+  position: relative;
+  width: 100%;
+  list-style-type: none;
+  padding: 10px 0px;
+}
+
+.user-status{
+  font-size: 20px !important;
+  margin-top: 11px;
+  margin-right: 10px;
+  position: relative;
+  float: right;
+  margin-right: 20px;
+}
+
+.twitch-users > a{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.clearfix{
+  overflow: auto;
+}
+
+li.user:hover{
+  background-color: rgb(214, 170, 170);
+  border-radius: 50px;
+}
+
+.no-logo{
+  background-color: grey;
+}

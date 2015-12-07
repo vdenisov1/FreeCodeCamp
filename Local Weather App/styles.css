@@ -1,0 +1,117 @@
+footer>a:not(:first-child){
+  margin-left: 5px;
+}
+
+footer.footer-right{
+  float: right;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  footer{
+    float: none !important;
+    text-align: center !important;
+  }
+}
+
+.text-white{
+  color: white;
+}
+
+.content{
+  padding-top:75px;
+  padding-bottom:75px;
+  margin-top: 25px;
+}
+
+.icon{
+  height: 50px;
+  width: 50px;
+  background-color: rgba(255,255,255,0.50);
+  border-radius: 50%;
+}
+
+.icon-image{
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+}
+
+.float-left{
+  float:left;
+}
+
+.center-div{
+  margin: 0px auto;
+  overflow: auto;
+}
+
+#temperature{
+  margin-left: 15px;
+
+  height: 50px;
+}
+
+#weather{
+  width: 235px;
+}
+
+#degrees{
+  margin-right: 15px;
+  background-color: rgba(255,255,255,0.50);
+  width: 75px;
+  height: 100%;
+  padding-top: 15px;
+  border-radius: 25%;
+}
+
+.unit{
+  cursor: pointer;
+  padding: 0px 15px;
+  background-color: grey;
+  height: 35px;
+  margin-top: 7px;
+  padding-top: 5px;
+}
+
+#units > div.active{
+  background-color: orange !important;
+  color: white !important;
+}
+
+#units{
+  width: 79px;
+  height: 50px;
+  border: 0px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#additional-weather{
+  width: 500px;
+  margin-top: 25px;
+}
+
+#additional-weather > div{
+  background-color: rgba(255,255,255,0.50);
+  padding: 17px 10px;
+  border-radius: 5%;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px){
+  #additional-weather > div{
+    float: none !important;
+    margin-top: 15px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+
+  #additional-weather{
+    width: 100%;
+  }
+}
