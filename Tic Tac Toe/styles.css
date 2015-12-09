@@ -1,0 +1,113 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #729f98;
+  color: #f0eceb !important;
+}
+
+footer>a:not(:first-child){
+  margin-left: 5px;
+}
+
+footer.footer-right{
+  float: right;
+  margin-right: 10px;
+}
+
+nav{
+  z-index: 100;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  footer{
+    float: none !important;
+    text-align: center !important;
+  }
+}
+
+.row{
+  float:left;
+  width:100%;
+}
+
+.red{
+  color: red !important;
+}
+
+.green{
+  color: green !important;
+}
+
+.text-white{
+  color: white;
+}
+
+.float-left{
+  float: left;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.float-right{
+  float: right;
+}
+
+.relative{
+  position: relative;
+}
+
+.content{
+  padding-top:45px;
+  padding-bottom:75px;
+  margin-top: 25px;
+}
+
+.game-row{
+  height: 100px;
+  width: 100%;
+}
+
+.game-cell{
+  float:left;
+  height: 100%;
+  padding-top: 20px;
+  width: 33%;
+}
+
+.game{
+  z-index: 5;
+  width: 275px;
+}
+
+.selection{
+  width: 80px;
+}
+
+.pop-up{
+  width: 300px;
+  position: absolute;
+  margin-top: 50px;
+}
+
+div.game>div.game-row:not(:last-child){
+  border-bottom: solid 5px black;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.panel-body{
+  color: black;
+}
+
+div.game-cell:nth-child(2){
+  border-left: solid 5px black;
+  border-right: solid 5px black;
+}
+
+.game-cell.empty{
+  cursor:pointer;
+}
