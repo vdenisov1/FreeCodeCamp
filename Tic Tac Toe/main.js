@@ -16,8 +16,10 @@ function centerHorizontally(element,original_width,relativeToWindow){
 	console.log("Original size: " + original_width);
 
 
-	if(leftMargin < 0){
-		element.css("width","100%");
+	if(parentWidth < original_width){
+		console.log("Parent width > original_width");
+		console.log("Parent Width: " + parentWidth + " Original: " + original_width);
+		element.css("width",(parentWidth - 30) + "px");
 	}else{
 		element.css("width",original_width + "px");
 		element.css("margin-left",leftMargin + "px");

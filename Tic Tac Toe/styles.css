@@ -81,7 +81,6 @@ nav{
 
 .game{
   z-index: 5;
-  width: 275px;
   background-color: #dddfd4;
   border: solid 2px #fae596;
 
@@ -92,7 +91,6 @@ nav{
 }
 
 .pop-up{
-  width: 300px;
   position: absolute;
   margin-top: 50px;
 }
