@@ -1,6 +1,6 @@
 body{
   font-family: 'Montserrat', sans-serif;
-  background-color: #729f98;
+  background-color: #173e43;
   color: #f0eceb !important;
 }
 
@@ -72,13 +72,19 @@ nav{
 .game-cell{
   float:left;
   height: 100%;
-  padding-top: 20px;
+  padding-top: 25px;
   width: 33%;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 30px;
+  color: #173e43 !important;
 }
 
 .game{
   z-index: 5;
   width: 275px;
+  background-color: #dddfd4;
+  border: solid 2px #fae596;
+
 }
 
 .selection{
@@ -92,7 +98,7 @@ nav{
 }
 
 div.game>div.game-row:not(:last-child){
-  border-bottom: solid 5px black;
+  border-bottom: solid 3px #3fb0ac;
 }
 
 .pointer{
@@ -104,10 +110,22 @@ div.game>div.game-row:not(:last-child){
 }
 
 div.game-cell:nth-child(2){
-  border-left: solid 5px black;
-  border-right: solid 5px black;
+  border-left: solid 3px #3fb0ac;
+  border-right: solid 3px #3fb0ac;
 }
 
 .game-cell.empty{
   cursor:pointer;
+}
+
+.panel-heading{
+  background-color: #3fb0ac !important;
+}
+
+.btn-info{
+  background-color: #3fb0ac !important;
+}
+
+.btn-info:hover{
+  background-color: #173e43 !important;
 }

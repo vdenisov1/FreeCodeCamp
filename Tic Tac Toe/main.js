@@ -1,6 +1,20 @@
-function centerHorizontally(element,original_width){
+var winClass = "";
+var winSign = "";
+var win = false;
+
+function centerHorizontally(element,original_width,relativeToWindow){
 	var parentWidth = $(element).parent().innerWidth();
-	var leftMargin = Math.floor(((parentWidth - original_width)/ 2));
+
+	if(relativeToWindow === true){
+		parentWidth = $(window).innerWidth();
+	}
+	
+	var leftMargin = Math.floor(((parentWidth - original_width)/ 2)) - 15;
+
+	console.log("Window Size: " + parentWidth);
+	console.log("Left Margin Calculated: " + leftMargin);
+	console.log("Original size: " + original_width);
+
 
 	if(leftMargin < 0){
 		element.css("width","100%");
@@ -21,57 +35,112 @@ function computerDecision(){
 	winCheck();
 }
 
+function checkHorizontal(typeCheck){
+	if(typeCheck === "opp" || typeCheck === "comp"){
+		//Check each horizontal for a win.
+		for(var i = 0; i < 3; i++){
+			var row = $("." + typeCheck + ".h-" + i + ":not(.empty)");
+			var otherCell = $(".empty.h-" + i);
+
+			if(row.length > 1 && otherCell.length > 0){
+				//Block is required
+				return "#" + otherCell.attr("id");
+			}
+		}
+	}else{
+		//Check each horizontal for a win.
+		for(var i = 0; i < 3; i++){
+			var row = $(".h-" + i + ":not(.empty)");
+
+			if(!(row.length < 3)){
+				if($(row[0]).html() === $(row[1]).html() && $(row[1]).html() === $(row[2]).html()){
+					win = true;
+					winClass = ".h-" + i;
+					winSign = $(row[0]).html();
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+function checkVertical(typeCheck){
+	if(typeCheck === "opp" || typeCheck === "comp"){
+		//Check each vertical for a win.
+		for(var i = 0; i < 3; i++){
+			var row = $("." + typeCheck + ".v-" + i + ":not(.empty)");
+			var otherCell = $(".empty.v-" + i);
+
+			if(row.length > 1 && otherCell.length > 0){
+				//Block is required
+				return "#" + otherCell.attr("id");
+			}
+		}
+	}else{
+		for(var i = 0; i < 3; i++){
+			var row = $(".v-" + i + ":not(.empty)");
+
+			if(!(row.length < 3)){
+				if($(row[0]).html() === $(row[1]).html() && $(row[1]).html() === $(row[2]).html()){
+					win = true;
+					winClass = ".v-" + i;
+					winSign = $(row[0]).html();
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+function checkDiagonal(typeCheck){
+	if(typeCheck === "opp" || typeCheck === "comp"){
+		//Check each vertical for a win.
+		for(var i = 0; i < 2; i++){
+			var row = $("." + typeCheck + ".d-" + i + ":not(.empty)");
+			var otherCell = $(".empty.d-" + i);
+
+			if(row.length > 1 && otherCell.length > 0){
+				//Block is required
+				return "#" + otherCell.attr("id");
+			}
+		}
+	}else{
+		for(var i = 0; i < 2; i++){
+			var row = $(".d-" + i + ":not(.empty)");
+
+			if(!(row.length < 3)){		
+				if($(row[0]).html() === $(row[1]).html() && $(row[1]).html() === $(row[2]).html()){
+					win = true;
+					winClass = ".d-" + i;
+					winSign = $(row[0]).html();
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
 function winCheck(){
 	//After each turn it checks if anyone won. 
 	// If someone won it will outline the winning line, 
 	// then add a pop-up to say who won with a button to play again.
 
-	var rows = $(".game-row");
-	var win = false;
-	var winClass = "";
-	var winSign = "";
 
-	//Check each horizontal for a win.
-	for(var i = 0; i < 3; i++){
-		var row = $(".h-" + i + ":not(.empty)");
+	//Check for a horizontal win
+	checkHorizontal();
 
-		if(!(row.length < 3)){
-			if($(row[0]).html() === $(row[1]).html() && $(row[1]).html() === $(row[2]).html()){
-				win = true;
-				winClass = ".h-" + i;
-				winSign = $(row[0]).html();
-			}
-		}
-	}
-
-	//Check each vertical for a win.
-	for(var i = 0; i < 3; i++){
-		var row = $(".v-" + i + ":not(.empty)");
-
-		if(!(row.length < 3)){
-			if($(row[0]).html() === $(row[1]).html() && $(row[1]).html() === $(row[2]).html()){
-				win = true;
-				winClass = ".v-" + i;
-				winSign = $(row[0]).html();
-			}
-		}
-	}
+	//Check for a vertical win
+	checkVertical();
 
 	//Check each diagonal for a win.
-	for(var i = 0; i < 2; i++){
-		var row = $(".d-" + i + ":not(.empty)");
-
-		if(!(row.length < 3)){		
-			if($(row[0]).html() === $(row[1]).html() && $(row[1]).html() === $(row[2]).html()){
-				win = true;
-				winClass = ".d-" + i;
-				winSign = $(row[0]).html();
-			}
-		}
-	}
+	checkDiagonal();
 
 	if(win){
-		$(winClass).css("background-color","green");
+		$(winClass).css("background-color","#fae596");
 
 		if(winSign === $(".user-selection").html()){
 			displayWinner("user");
@@ -85,6 +154,50 @@ function winCheck(){
 	}
 }
 
+function blockOpponent(){
+	var horizontal = checkHorizontal("opp");
+	var vertical = checkVertical("opp");
+	var diagonal = checkDiagonal("opp");
+
+	if(!(horizontal === false)){
+		console.log("Block required in " + horizontal);
+		setCell($(horizontal),"comp");
+		return true;
+	}else if(!(vertical === false)){
+		console.log("Block required in " + vertical);
+		setCell($(vertical),"comp");
+		return true;
+	}else if(!(diagonal === false)){
+		console.log("Block required in " + diagonal);
+		setCell($(diagonal),"comp");
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function checkForWin(){
+	var horizontal = checkHorizontal("comp");
+	var vertical = checkVertical("comp");
+	var diagonal = checkDiagonal("comp"); 
+
+	if(!(horizontal === false)){
+		console.log("Win opportunity in " + horizontal);
+		setCell($(horizontal),"comp");
+		return true;
+	}else if(!(vertical === false)){
+		console.log("Win opportunity in " + vertical);
+		setCell($(vertical),"comp");
+		return true;
+	}else if(!(diagonal === false)){
+		console.log("Win opportunity in " + diagonal);
+		setCell($(diagonal),"comp");
+		return true;
+	}else{
+		return false;
+	}
+}
+
 function resetGame(){
 	$(".turn").html("comp");
 	$(".game-cell").html("");
@@ -94,6 +207,9 @@ function resetGame(){
 	$("#end-message").addClass("hidden");	
 	$(".game-cell").css("background-color","");
 	$(".game-cell").addClass("empty");
+	$(".game-cell").removeClass("opp");
+	$(".game-cell").removeClass("comp");
+	win = false;
 	console.log("Game reset");
 
 	if($(".turn").html() === "comp"){
@@ -122,41 +238,52 @@ function displayWinner(winner){
 }
 
 function randomSelection(){
-	var emptyCells = $(".game-cell.empty");
-
-	if(emptyCells.length < 1){
-		console.log("No Moves left");
+	if(checkForWin()){
+		//First check if you have an opportunity to win.
 		return false;
+	}else if(blockOpponent()){
+		//Second check is the oppenent needs to be blocked.
+		return false;
+	}else{
+		var emptyCells = $(".game-cell.empty");
+
+		if(emptyCells.length < 1){
+			console.log("No Moves left");
+			return false;
+		}
+
+		var number = Math.floor(Math.random() * (emptyCells.length - 1 + 1)) + 1;
+
+		setCell($(emptyCells[number-1]),"comp");
+
+		console.log("Computer goes with " + number);
 	}
-
-	var number = Math.floor(Math.random() * (emptyCells.length - 1 + 1)) + 1;
-
-	setCell($(emptyCells[number-1]),"comp");
-
-	console.log("Computer goes with " + number);
 }
 
 function setCell(cellElement,userType){
 	var textCell = "";
+	var addOppClass = "comp";
 
 	//Check which mark to make (user/computer) and also change the turn
 	if(userType === "comp"){
 		textCell = $(".comp-selection").html();
 		$(".turn").html("user");
+		console.log("Computer set an " + textCell);
 	}else{
 		textCell = $(".user-selection").html();
+		addOppClass = "opp";
 		$(".turn").html("comp");
+		console.log("User set an " + textCell);
 	}
 
+	console.log("Comp Set to : " + $(".comp-selection").html());
+
 	cellElement.html(textCell);
+	cellElement.addClass(addOppClass);
 	cellElement.removeClass("empty");
 }
 
 $(document).ready(function(){
-	if($(".turn").html() === "comp"){
-		computerDecision();
-	}
-
 	centerHorizontally($(".pop-up"),300);
 	centerHorizontally($(".game"),276);
 	centerHorizontally($(".selection"),80);
@@ -178,6 +305,10 @@ $(document).ready(function(){
 		
 		$("#begin-message").hide();
 		$(".pop-up").hide();
+
+		if($(".turn").html() === "comp"){
+			computerDecision();
+		}
 	});
 
 	$(".game-cell").on("click",function(el){
