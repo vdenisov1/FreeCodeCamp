@@ -1,0 +1,144 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #173e43;
+  color: #f0eceb !important;
+}
+
+footer>a:not(:first-child){
+  margin-left: 5px;
+}
+
+footer.footer-right{
+  float: right;
+  margin-right: 10px;
+}
+
+nav{
+  z-index: 100;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  footer{
+    float: none !important;
+    text-align: center !important;
+  }
+}
+
+.row{
+  float:left;
+  width:100%;
+}
+
+.red{
+  color: red !important;
+}
+
+.green{
+  color: green !important;
+}
+
+.text-white{
+  color: white;
+}
+
+.float-left{
+  float: left;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.float-right{
+  float: right;
+}
+
+.relative{
+  position: relative;
+}
+
+.content{
+  padding-top:45px;
+  padding-bottom:75px;
+  margin-top: 25px;
+}
+
+.outer{
+  position: relative;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  border: solid 2px gray;
+  background-color: gray;
+  border-radius: 250px;
+}
+
+.game-button{
+  float:left;
+  width:248px;
+  height:248px;
+  border: solid 16px gray;
+}
+
+#button-1{
+  border-top-left-radius: 250px;
+  background-color: red;
+}
+
+#button-2{
+  border-top-right-radius: 250px;
+  background-color: blue; 
+}
+
+#button-3{
+  border-bottom-left-radius: 250px;
+  background-color: green;
+  
+}
+
+#button-4{
+  border-bottom-right-radius: 250px;
+  background-color: yellow;
+}
+
+#button-4,#button-3{
+  border-top-width: 8px !important;
+}
+
+#button-1,#button-2{
+  border-bottom-width: 8px !important;
+}
+
+#button-1,#button-3{
+  border-right-width: 8px !important;
+}
+
+#button-2,#button-4{
+  border-left-width: 8px !important;
+}
+
+#controls{
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: orange;
+  border: solid 15px gray;
+  margin: auto;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  border-radius: 125px;
+}
+
+#controls > .title{
+  margin-top: 25%;
+  width: 100%;
+  text-align: center;
+}
+
+#power{
+  width: 100%;
+}
+
