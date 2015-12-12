@@ -133,7 +133,8 @@ nav{
 }
 
 #controls > .title{
-  margin-top: 25%;
+  font-size: 25px;
+  margin-top: 20%;
   width: 100%;
   text-align: center;
 }
@@ -142,3 +143,131 @@ nav{
   width: 100%;
 }
 
+#display{
+  background-color: #330000;
+  height: 40%;
+  border: solid 2px black;
+  border-radius: 5px;
+}
+
+#count{
+  float: left;
+  width: 30%;
+  margin-left: 8%;
+  height: 100%;
+}
+
+#start-section{
+  float: left;
+  width: 25%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+#strict-section{
+  float: left;
+  width: 25%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+#game-buttons{
+  height: 35%;
+}
+
+.button{
+  width: 45%;
+  height: 30%;
+  margin: auto;
+  border: solid 3px gray;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px 1px black;
+  cursor: pointer;
+}
+
+.button:active{
+  box-shadow: none;
+}
+
+.button.start{
+  background-color: red;
+}
+
+.button.strict{
+  background-color: yellow;
+}
+
+#count{
+  margin-top: 2%;
+}
+
+#start-section{
+  margin-top: 5%;
+}
+
+#strict-section{
+  margin-top: 1%;
+}
+
+.subtitle{
+  margin-top: 5%;
+}
+
+#power{
+  width: 100%;
+  height: 25%;
+}
+
+#power > #off{
+  float:left;
+  margin-left: 25%;
+  height: 50%;
+}
+
+#power > .switch{
+  float:left;
+  height: 42%;
+  width: 25%;
+  margin-left:2%;
+  margin-right:2%;
+  background-color: gray;
+  cursor: pointer;
+}
+
+#power > #on{
+  float:left;
+  height: 50%;
+}
+
+.reg{
+  font-size: 11px;
+  vertical-align: top;
+  text-align:left;
+}
+
+.switch > .switcher {
+  border: solid 2px gray;
+  width: 50%;
+  background-color: blue;
+  height: 100%;
+  border-radius: 25%;
+}
+
+.timer{
+  vertical-align: middle;
+}
+
+.light{
+  width: 10%;
+  height: 8%;
+  background-color: gray;
+  border: solid 2px gray;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+}
+
+.light.on{
+  background-color: red;
+}
