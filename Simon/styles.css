@@ -72,6 +72,7 @@ nav{
   border: solid 2px gray;
   background-color: gray;
   border-radius: 250px;
+  z-index: 1;
 }
 
 .game-button{
@@ -231,6 +232,9 @@ nav{
   margin-left:2%;
   margin-right:2%;
   background-color: gray;
+}
+
+.switchable{
   cursor: pointer;
 }
 
@@ -270,4 +274,22 @@ nav{
 
 .light.on{
   background-color: red;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.game-button.clickable:active{
+  background-color: black !important;
+}
+
+.pop-up{
+  position: absolute;
+  margin-top: 50px;
+  z-index: 10;
+}
+
+.pressed{
+  background-color: black !important;
 }

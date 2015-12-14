@@ -23,6 +23,12 @@
 	</head>
 
 	<body>
+
+		<audio id="s-1" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+		<audio id="s-2" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+		<audio id="s-3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+		<audio id="s-4" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+
 		<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="container">
 				<div class="navbar-header">
@@ -32,6 +38,17 @@
 		</nav>
 
 		<div class="container content">
+
+				<div class="pop-up hidden">
+					<div class="panel panel-default" id="end-message">
+						<div class="panel-heading text-center" id="game-heading">Congratulations!</div>
+						<div class="panel-body">
+							<p id="game-message">Congratulations you won!</p>
+							<div class="btn btn-info" id="reset-game">Play Again!</div>
+						</div>
+					</div>
+				</div>
+				
 				<div class="outer">
 					<div class="game-button" id="button-1"></div>
 					<div class="game-button" id="button-2"></div>
@@ -58,7 +75,7 @@
 						</div>
 						<div id="power">
 							<div id="off">OFF</div>
-							<div class="switch off">
+							<div class="switch switchable off">
 								<div class="switcher"></div>
 							</div>
 							<div id="on">ON</div>
