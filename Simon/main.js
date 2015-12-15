@@ -4,6 +4,9 @@ var gameSpeed = 1000;
 var userClicks = 0;
 var strictMode = false;
 
+// This function is to center a div horizonatlly by window Size or it's parent DIV size.
+//  To do this it takes it's parent DIV or window size and evenly divides the width, subtracts it's width
+//  and creates a left margin to the element.
 function centerHorizontally(element,original_width,relativeToWindow){
 	var parentWidth = $(element).parent().innerWidth();
 
@@ -26,138 +29,184 @@ function centerHorizontally(element,original_width,relativeToWindow){
 	}
 }
 
-function simonGo(increment){
-	//This function is for the computer to go. 
-	$(".switch").removeClass("switchable");
-	
-	if(increment === true){
-		var randomNumber = Math.floor(Math.random() * (4)) + 1;
-		gamePattern.push(randomNumber);
+// showPattern(increment)
+// 	This function is used to show the pattern of moves in the game. 
+//		if increment is true then it will add a step, otherwise it will just show the current steps over.
+function showPattern(increment){
+	//First lock the game
+	lockGame();
 
-		if(gamePattern.length > 12){
-			gameSpeed = 500;
-		}else if(gamePattern.length > 8){
-			gameSpeed = 650;
-		}else if(gamePattern.length > 4){
-			gameSpeed = 850;
+	if(increment === true){
+		if(!(nextPattern())){
+			gameOver(true);
+			return false;
 		}
 	}
 
-	if($(".game-button").hasClass("clickable")){
-		$(".game-button").removeClass("clickable");
-	}
-
-	if(gamePattern.length > 20){
-		gameOver(true);
-		return false;
-	}
-
-	var counter = $("#count > #display");
-
-	console.log("In SimongGo");
-
+	var counter = $("#display");
 	var showing = 0;
 
+	counter.html(gamePattern.length);
+
 	for(var i = 0; i < gamePattern.length * 2; i++){
-		var clickable = (i + 1 < gamePattern.length) ? false : true;
+		var unlock = (i + 1 < 2*gamePattern.length) ? false : true;
+
+		console.log("i = " + i + " Unlock = " + unlock);
 
 		if(i % 2 > 0){
-			setTimeout("buttonRelease(" + clickable + ")",gameSpeed * i);
+			setTimeout("buttonRelease(" + unlock + ")",gameSpeed * i);
 		}else{
-			console.log("Showing index " + showing);
-
 			setTimeout("buttonPress(" + gamePattern[showing] + "," + i + ")",gameSpeed * i);
 			showing++;
 		}
 	}
-
-	counter.html(gamePattern.length);
 }
 
-function buttonRelease(clickable){
-	$(".pressed").removeClass("pressed");
+// lockGame() locks the game buttons (switcher and ability to press the buttons).
+function lockGame(){
+	var switcher = $(".switch");
+	var gameButtons = $(".game-button");
 
-	if(clickable === true){
-		$(".game-button").addClass("clickable");
-		$(".switch").addClass("switchable");
+	if(switcher.hasClass("switchable")){
+		switcher.removeClass("switchable");
 	}
 
+	if(gameButtons.hasClass("clickable")){
+		gameButtons.removeClass("clickable");
+	}
+
+	return true;
 }
 
+// unlockGame() unlocks the game buttons (switcher and ability to press the buttons).
+function unlockGame(){
+	var switcher = $(".switch");
+	var gameButtons = $(".game-button");
+
+	if(!(switcher.hasClass("switchable"))){
+		switcher.addClass("switchable");
+	}
+
+	if(!(gameButtons.hasClass("clickable"))){
+		gameButtons.addClass("clickable");
+	}
+
+	return true;
+}
+
+// gameIsLocked() returns true if the game is locked, false otherwise.
+function gameIsLocked(){
+	var switcher = $(".switch");
+	var gameButtons = $(".game-button");
+
+	if(switcher.hasClass("switchable") && gameButtons.hasClass("clickable")){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+//	nextPattern() will increment the game pattern by 1 and also check if the gamespeed should be
+//   updated. If the game pattern is over 20 then it will return false.
+function nextPattern(){
+	var randomNumber = Math.floor(Math.random() * (4)) + 1;
+	gamePattern.push(randomNumber);
+
+	if(gamePattern.length > 12){
+		gameSpeed = 500;
+	}else if(gamePattern.length > 8){
+		gameSpeed = 650;
+	}else if(gamePattern.length > 4){
+		gameSpeed = 850;
+	}
+
+	if(gamePattern.length > 20){
+		return false;
+	}
+	
+	return true;
+}
+
+// buttonRelease(unlock) releases the button from being pressed down. If unlock is true then it also unlocks
+//  the game since it's the last release of the pattern.
+function buttonRelease(unlock){
+	$(".pressed").removeClass("pressed");
+
+	if(unlock === true){
+		unlockGame();
+	}
+}
+
+// buttonPress(button_id) uses the button id to press down on the button while showing the pattern.
 function buttonPress(button_id){
 	var button = $("#button-" + button_id);
 	var buttonsToClear = $(".pressed");
 
-
 	if(typeof(button.attr("id")) === "undefined"){
-		console.log("Clearing last button");
 		buttonsToClear.removeClass("pressed");
-		$(".game-button").addClass("clickable");
 	}else{
-		console.log("Adding pressed class to " + button.attr("id"));
 		buttonsToClear.removeClass("pressed");
 		button.addClass("pressed");
 	}
 }
 
+// startGame() starts or resets the game.
 function startGame(){
 	gamePattern = [];
 	gameSpeed = 1000;
-	simonGo(true);
+	showPattern(true);
 }
 
-function wait(milliseconds){
-	var startTime = Date.now();
-	var currentTime = Date.now();
-
-	while((currentTime - startTime) < milliseconds){
-		currentTime = Date.now();
-	}
-
-	return true;
-}
-
+// changeSwitch() moves the switch when pressed.
 function changeSwitch(){
 	var switchDiv = $(".switch");
 	var switcher = $(".switch > .switcher");
-	var gameButtons = $(".game-button");
 	var currentPosition = switchDiv.hasClass("off") ? "off" : "on";
-	var counter = $("#count > #display");
 
 	if(currentPosition === "off"){
-		//If it's currently in the off position, that means we must switch it on.
-		console.log("Turning on");
 		switcher.css("margin-left","50%");
 		switchDiv.removeClass("off");
 		switchDiv.addClass("on");
-		gameButtons.addClass("clickable");
-		turnDisplayOn();
+		turnOnGame();
 	}else{
 		console.log("Turning off");
 		switcher.css("margin-left","0%");
 		switchDiv.removeClass("on");
 		switchDiv.addClass("off");
-		gameButtons.removeClass("clickable");
-		turnDisplayOff();
+		turnOffGame();
 	}
 }
 
-function turnDisplayOn(){
-	$("#count > #display").html("--");
+// turnOnGame() turns on the display and enables the buttons.
+function turnOnGame(){
+	var gameButtons = $(".game-button");
+	var counter = $("#count > #display");
+
+	gameButtons.addClass("clickable");
+	counter.html("--");
+
 	return true;
 }
 
-function turnDisplayOff(){
-	$("#count > #display").html("");
+// turnOffGame() turns off the display and disables the buttons.
+function turnOffGame(){
+	var gameButtons = $(".game-button");
+	var counter = $("#count > #display");
+
+	gameButtons.removeClass("clickable");
+	counter.html("");
+
 	return true;
 }
 
+// gameOver(win) displays the popup congratulating the use if the game is over.
 function gameOver(win){
-	//This function will be used to display the winning game message if the user wins a 20 step pattern.
-	console.log("Congrats you won!");
 	$(".pop-up").removeClass("hidden");
+	return true;
 }
 
+// checkUserInput() checks the patter of the user array to the pattern of the game and returns false if 
+//  one of the patterns are not equal. Otherwise returns true for success.
 function checkUserInput(){
 	for(var k = 0; k < userPattern.length; k++){
 		if(!(gamePattern[k] === userPattern[k])){
@@ -168,8 +217,10 @@ function checkUserInput(){
 	return true;
 }
 
+// wrongInput(times,interval) displays the !! in the display if a user got the wrong input. If strict mode is 
+//  enabled then after the display is shown it will start the game over.
 function wrongInput(times,interval){
-	$(".game-button").removeClass("clickable");
+	lockGame();
 
 	for(var i = 0; i <= 2*times; i++){
 		if(i % 2 > 0){
@@ -181,31 +232,37 @@ function wrongInput(times,interval){
 	}
 }
 
+// displayBlink(text,index,total,original_text) just shows the !! in the display or reverts back to the number of 
+//  patterns in the display.
 function displayBlink(text,index,total,original_text){
 	var display = $("#display");
-
-	console.log("Index = " + index + " Text = " + text + " Total = " + total + " Original Text = " + original_text);
 	
 	if(index < total){
 		display.html(text);
 	}else{
-		$(".game-button").addClass("clickable");
+		unlockGame();
 		display.html(original_text);
 		
 		if(strictMode){
 			startGame();
 		}else{
-			simonGo(false);
+			showPattern(false);
 		}
 	}
 }
 
 $(document).ready(function(){
+	///////////////////////////////////////
+	// Section is to recenter pop up.
+	///////////////////////////////////////
 	centerHorizontally($(".pop-up"),300);
 
 	$(window).resize(function(){
 		centerHorizontally($(".pop-up"),300);
 	});
+
+	///////////////////////////////////////
+	///////////////////////////////////////
 
 	$(".btn#reset-game").on("click",function(){
 		$(".pop-up").addClass("hidden");
@@ -213,22 +270,18 @@ $(document).ready(function(){
 	});
 
 	$(".game-button").on("click",function(){
-		if($(this).hasClass("clickable")){
-			console.log("Game button clicked");
-			
+		if(!(gameIsLocked())){		
 			var buttonPressed = $(this).attr("id");
+
 			var patternNum = parseInt(buttonPressed[buttonPressed.length-1]);
-
-			console.log("Adding " + patternNum + " to UserPattern");
 			userPattern.push(patternNum);
-
 
 			//Check input right away.
 			if(checkUserInput()){
 				//Next level.
 				if(userPattern.length === gamePattern.length){
 					setTimeout(function(){
-						simonGo(true);
+						showPattern(true);
 					},200);
 
 					userPattern = [];
@@ -237,7 +290,6 @@ $(document).ready(function(){
 				wrongInput(3,300);
 				userPattern = [];
 			}
-
 		}
 	});
 
@@ -263,16 +315,15 @@ $(document).ready(function(){
 				strictButton.addClass("off");
 				strictMode = false;
 			}
-		}else{
-			return false;
+
+			return true;
 		}
+
+		return false;
 	});
 
 	$(".switch").on("click",function(){
-		console.log("Switch pressed");
-
-		if($(this).hasClass("switchable")){
-			console.log("Switching");
+		if($(".switch").hasClass("switchable")){
 			changeSwitch();
 		}
 	});
