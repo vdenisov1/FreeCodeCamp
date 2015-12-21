@@ -3,6 +3,8 @@ var userPattern = [];
 var gameSpeed = 1000;
 var userClicks = 0;
 var strictMode = false;
+var hasAudioContext = window.AudioContext || window.webkitAudioContext || false;
+var audioCtx, gainNodes, errNode, errOsc, oscillators, vol, ramp;
 
 // This function is to center a div horizonatlly by window Size or it's parent DIV size.
 //  To do this it takes it's parent DIV or window size and evenly divides the width, subtracts it's width
@@ -132,6 +134,10 @@ function nextPattern(){
 function buttonRelease(unlock){
 	$(".pressed").removeClass("pressed");
 
+	if(hasAudioContext){
+		stopGoodTones();
+	}
+
 	if(unlock === true){
 		unlockGame();
 	}
@@ -144,7 +150,15 @@ function buttonPress(button_id){
 
 	if(typeof(button.attr("id")) === "undefined"){
 		buttonsToClear.removeClass("pressed");
+
+		if(hasAudioContext){
+			stopGoodTones();
+		}
 	}else{
+		if(hasAudioContext){
+			playGoodTone(button_id-1);
+		}
+
 		buttonsToClear.removeClass("pressed");
 		button.addClass("pressed");
 	}
@@ -251,7 +265,72 @@ function displayBlink(text,index,total,original_text){
 	}
 }
 
+// AudioContext Implementation
+
+function playGoodTone(num){
+	gainNodes[num].gain.linearRampToValueAtTime(vol,audioCtx.currentTime + ramp);
+};
+
+function stopGoodTones(){
+	gainNodes.forEach(function(g){
+		g.gain.linearRampToValueAtTime(0,audioCtx.currentTime + ramp);
+	});
+};
+
+function playErrTone(){
+	errNode.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + ramp);
+};
+
+function stopErrTone(){
+	errNode.gain.linearRampToValueAtTime(0,audioCtx.currentTime + ramp);
+};
+
+// -----------------------------
+
 $(document).ready(function(){
+	/////////////////// AudioContext Implementation //////////
+	if(!hasAudioContext){
+		alert("Sorry, but your browser does not support Web Audio API. You can continue to play without sounds.");
+	}else{
+		console.log("Audio Works");
+
+		audioCtx = new AudioContext();
+
+		var frequencies = [329.63,261.63,220,164.81];
+
+		errOsc = audioCtx.createOscillator();
+		errOsc.type = 'triangle';
+		errOsc.frequency.value = 110;
+		errOsc.start(0.0);
+
+		errNode = audioCtx.createGain();
+		errOsc.connect(errNode);
+		errNode.gain.value = 0;
+		errNode.connect(audioCtx.destination);
+
+		ramp = 0.1;
+		vol = 0.5;
+
+		oscillators = frequencies.map(function(frq){
+			var osc = audioCtx.createOscillator();
+			osc.type = 'sine';
+			osc.frequency.value = frq;
+			osc.start(0.0);
+			return osc;
+		});
+
+		gainNodes = oscillators.map(function(osc){
+			console.log("Setting gaineNodes " + osc);
+			var g = audioCtx.createGain();
+			osc.connect(g);
+			g.connect(audioCtx.destination);
+			g.gain.value = 0;
+			return g;
+		});
+
+		console.log("gaineNodes[1] = " + gainNodes);
+	}
+
 	///////////////////////////////////////
 	// Section is to recenter pop up.
 	///////////////////////////////////////
@@ -293,6 +372,29 @@ $(document).ready(function(){
 		}
 	});
 
+	$(".game-button").on("mousedown",function(){
+		if(!(gameIsLocked())){
+			console.log("On mouseDown");
+
+			var buttonPressed = $(this).attr("id");
+			var patternNum = parseInt(buttonPressed[buttonPressed.length-1]);
+
+			if(hasAudioContext){
+				playGoodTone(patternNum-1);
+			}
+		}
+	});
+
+	$(".game-button").on("mouseup",function(){
+		if(!(gameIsLocked())){
+			console.log("On mouseUp");
+
+			if(hasAudioContext){
+				stopGoodTones();
+			}
+		}
+	});
+
 	$(".button.start").on("click",function(){
 		if($(".switch").hasClass("on")){
 			startGame();
@@ -300,6 +402,8 @@ $(document).ready(function(){
 			return false;
 		}
 	});
+
+
 
 	$(".button.strict").on("click",function(){
 		if($(".switch").hasClass("on")){
