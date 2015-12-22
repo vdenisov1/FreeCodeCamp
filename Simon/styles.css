@@ -69,7 +69,7 @@ nav{
   margin: auto;
   width: 500px;
   height: 500px;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   background-color: #64706c;
   border-radius: 250px;
   z-index: 1;
@@ -77,9 +77,9 @@ nav{
 
 .game-button{
   float:left;
-  width:248px;
-  height:248px;
-  border: solid 16px #64706c;
+  width:250px;
+  height:250px;
+  border: solid 24px #64706c;
 }
 
 #button-1{
@@ -119,19 +119,19 @@ nav{
 }
 
 #button-4,#button-3{
-  border-top-width: 8px !important;
+  border-top-width: 12px;
 }
 
 #button-1,#button-2{
-  border-bottom-width: 8px !important;
+  border-bottom-width: 12px;
 }
 
 #button-1,#button-3{
-  border-right-width: 8px !important;
+  border-right-width: 12px;
 }
 
 #button-2,#button-4{
-  border-left-width: 8px !important;
+  border-left-width: 12px;
 }
 
 #controls{
@@ -150,7 +150,7 @@ nav{
 
 #controls > .title{
   font-size: 25px;
-  margin-top: 20%;
+  margin-top: 30px;
   width: 100%;
   text-align: center;
 }
@@ -178,6 +178,7 @@ nav{
   width: 25%;
   height: 100%;
   margin-left: 3%;
+  margin-top: 5%;
 }
 
 #strict-section{
@@ -185,6 +186,7 @@ nav{
   width: 25%;
   height: 100%;
   margin-left: 3%;
+  margin-top: 5%;
 }
 
 #game-buttons{
@@ -217,16 +219,9 @@ nav{
   margin-top: 2%;
 }
 
-#start-section{
-  margin-top: 5%;
-}
-
-#strict-section{
-  margin-top: 1%;
-}
-
 .subtitle{
   margin-top: 5%;
+  font-size: 14px;
 }
 
 #power{
@@ -278,14 +273,14 @@ nav{
 }
 
 .light{
-  width: 10%;
-  height: 8%;
+  position: absolute;
+  right: 38px;
+  top: 72px;
+  width: 5px;
+  height: 5px;
   background-color: #ede9ce;
   border: solid 2px #ede9ce;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3%;
 }
 
 .light.on{

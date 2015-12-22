@@ -296,15 +296,178 @@ function stopErrTone(){
 };
 
 // -----------------------------
+// --------- Mobile Compatibility Functions
+// -----------------------------
+
+function resizeGame(forcedWidth){
+	var defaults = {
+		".outer": {
+			"width": "500px",
+			"height": "500px",
+			"border-top-left-radius": "250px",
+			"border-top-right-radius": "250px",
+			"border-bottom-right-radius": "250px",
+			"border-bottom-left-radius": "250px"
+		},
+		".game-button": {
+			"width": "250px",
+			"height": "250px"
+		},
+		"#controls": {
+			"width": "250px",
+			"height": "250px",
+			"border-top-left-radius": "125px",
+			"border-top-right-radius": "125px",
+			"border-bottom-right-radius": "125px",
+			"border-bottom-left-radius": "125px",
+			"border-top-width": "15px",
+			"border-right-width": "15px",
+			"border-bottom-width": "15px",
+			"border-left-width": "15px"
+		},
+		"#button-1": {
+			"border-top-left-radius": "250px",
+			"border-right-width": "12px",
+			"border-bottom-width": "12px",
+			"border-left-width": "24px",
+			"border-top-width": "24px"
+		},
+		"#button-2": {
+			"border-top-right-radius": "250px",
+			"border-bottom-width": "12px",
+			"border-left-width": "12px",
+			"border-top-width": "24px",
+			"border-right-width": "24px",
+		},
+		"#button-3": {
+			"border-bottom-left-radius": "250px",
+			"border-top-width": "12px",
+			"border-right-width": "12px",
+			"border-bottom-width": "24px",
+			"border-left-width": "24px"
+		},
+		"#button-4": {
+			"border-bottom-right-radius": "250px",
+			"border-top-width": "12px",
+			"border-left-width": "12px",
+			"border-right-width": "24px",
+			"border-bottom-width": "24px",
+		},
+		"#controls > .title": {
+			"font-size": "25px",
+			"margin-top": "30px"
+		},
+		".subtitle": {
+			"font-size": "14px"
+		},
+		"#on": {
+			"font-size": "14px"
+		},
+		"#off": {
+			"font-size": "14px"
+		},
+		"#display": {
+			"font-size": "14px"
+		},
+		".light": {
+			"right": "38px",
+			"top": "72px",
+		}
+	}
+
+	var screenWidth = $(window).innerWidth();
+
+	if(screen.width < 500){
+		screenWidth = screen.width;
+	}
+
+	if(!(typeof(forcedWidth) === "undefined")){
+		screenWidth = forcedWidth;
+	}
+
+	console.log("Screen width is " + screenWidth);
+	console.log("Outer width is " + $(".outer").width());
+
+	if(screenWidth < 500){
+		//resize to new full screen
+		var ratio = (screenWidth - 30) / parseFloat(defaults[".outer"]["width"]);
+
+		console.log("Ratio is " + ratio + " using screenwidth : " + (screenWidth-30) + " and outer width of " + $(".outer").outerWidth());
+		//restore to defaults
+		var elements = Object.keys(defaults);
+
+		for(var i = 0; i < elements.length; i++){
+			var el = elements[i];
+			var props = Object.keys(defaults[el]);
+
+			for(var j = 0; j < props.length; j++){
+				var prop = props[j];
+				var value = (parseFloat(defaults[el][prop]) * ratio) + "px"; 
+
+				if(prop === "game-button"){
+					value = ((parseFloat($(el).css(prop) - $(el).css("border-left-width"))));
+				}
+
+				//console.log("Setting " + el + " property " + prop + " from " + $(el).css(prop) + " to " + value);
+
+				defaults[el][prop] = value;
+				
+			}
+
+		}
+
+		for(var i = 0; i < elements.length; i++){
+
+			var el = elements[i];
+			var props = Object.keys(defaults[el]);
+
+			for(var j = 0; j < props.length; j++){
+				var prop = props[j];
+				var val = defaults[el][prop];
+				
+				$(el).css(prop,val);
+			}
+
+		}
+
+	}else{
+		console.log("Restoring to defaults");
+		//restore to defaults
+		var elements = Object.keys(defaults);
+
+		for(var i = 0; i < elements.length; i++){
+			var el = elements[i];
+			var props = Object.keys(defaults[el]);
+
+			for(var j = 0; j < props.length; j++){
+				var prop = props[j];
+				var value = defaults[el][prop]
+
+				//console.log("Setting " + el + " " + prop + " to " + value);
+				$(el).css(prop,value);
+			}
+
+		}
+	}
+}
 
 $(document).ready(function(){
+	var fWidth = $(window).innerWidth();
+
+	console.log("Inner Width : " + fWidth);
+	console.log("Screen Width : " + screen.width);
+
 	/////////////////// AudioContext Implementation //////////
 	if(!hasAudioContext){
 		alert("Sorry, but your browser does not support Web Audio API. You can continue to play without sounds.");
 	}else{
 		console.log("Audio Works");
 
-		audioCtx = new AudioContext();
+    if(typeof(webkitAudioContext) === "undefined"){
+      audioCtx = new AudioContext();
+    }else{
+   		audioCtx = new webkitAudioContext(); 
+    }
 
 		var frequencies = [329.63,261.63,220,164.81];
 
@@ -345,9 +508,11 @@ $(document).ready(function(){
 	// Section is to recenter pop up.
 	///////////////////////////////////////
 	centerHorizontally($(".pop-up"),300);
+	resizeGame();
 
 	$(window).resize(function(){
 		centerHorizontally($(".pop-up"),300);
+		resizeGame();
 	});
 
 	///////////////////////////////////////
@@ -393,6 +558,36 @@ $(document).ready(function(){
 
 			if(hasAudioContext){
 				playGoodTone(patternNum-1);
+			}
+		}
+	});
+
+	$(".game-button").on("touchstart",function(e){
+		console.log("Touch started");
+
+		if(!(gameIsLocked()) && gameStarted()){
+			console.log("On touchstart");
+
+			var buttonPressed = $(this).attr("id");
+			var patternNum = parseInt(buttonPressed[buttonPressed.length-1]);
+
+			$(this).addClass("pressed");
+			if(hasAudioContext){
+				playGoodTone(patternNum-1);
+			}
+		}
+	});
+
+	$(".game-button").on("touchend",function(e){
+		console.log("Touch Ended");
+
+		if(!(gameIsLocked()) && gameStarted()){
+			console.log("On touchend");
+
+			$(this).removeClass("pressed");
+
+			if(hasAudioContext){
+				stopGoodTones();
 			}
 		}
 	});
