@@ -171,6 +171,14 @@ function startGame(){
 	showPattern(true);
 }
 
+function gameStarted(){
+	if(gamePattern.length > 0){
+		return true;
+	}
+
+	return false;
+}
+
 // changeSwitch() moves the switch when pressed.
 function changeSwitch(){
 	var switchDiv = $(".switch");
@@ -235,6 +243,7 @@ function checkUserInput(){
 //  enabled then after the display is shown it will start the game over.
 function wrongInput(times,interval){
 	lockGame();
+	playErrTone();
 
 	for(var i = 0; i <= 2*times; i++){
 		if(i % 2 > 0){
@@ -250,6 +259,7 @@ function wrongInput(times,interval){
 //  patterns in the display.
 function displayBlink(text,index,total,original_text){
 	var display = $("#display");
+	stopErrTone();
 	
 	if(index < total){
 		display.html(text);
@@ -372,12 +382,14 @@ $(document).ready(function(){
 		}
 	});
 
-	$(".game-button").on("mousedown",function(){
-		if(!(gameIsLocked())){
+	$(".game-button").on("mousedown",function(e){
+		if(!(gameIsLocked()) && gameStarted() && e.which == 1){
 			console.log("On mouseDown");
 
 			var buttonPressed = $(this).attr("id");
 			var patternNum = parseInt(buttonPressed[buttonPressed.length-1]);
+
+			$(this).addClass("pressed");
 
 			if(hasAudioContext){
 				playGoodTone(patternNum-1);
@@ -385,9 +397,11 @@ $(document).ready(function(){
 		}
 	});
 
-	$(".game-button").on("mouseup",function(){
-		if(!(gameIsLocked())){
+	$(".game-button").on("mouseup",function(e){
+		if(!(gameIsLocked()) && gameStarted() && e.which == 1){
 			console.log("On mouseUp");
+
+			$(this).removeClass("pressed");
 
 			if(hasAudioContext){
 				stopGoodTones();

@@ -1,7 +1,7 @@
 body{
   font-family: 'Montserrat', sans-serif;
-  background-color: #173e43;
-  color: #f0eceb !important;
+  background-color: #c7ad88;
+  color: white !important;
 }
 
 footer>a:not(:first-child){
@@ -69,8 +69,8 @@ nav{
   margin: auto;
   width: 500px;
   height: 500px;
-  border: solid 2px gray;
-  background-color: gray;
+  border: solid 2px black;
+  background-color: #64706c;
   border-radius: 250px;
   z-index: 1;
 }
@@ -79,28 +79,43 @@ nav{
   float:left;
   width:248px;
   height:248px;
-  border: solid 16px gray;
+  border: solid 16px #64706c;
 }
 
 #button-1{
   border-top-left-radius: 250px;
-  background-color: red;
+  background-color: #00a74a;
+}
+
+#button-1.pressed{
+  background-color: #13ff7c;
 }
 
 #button-2{
   border-top-right-radius: 250px;
-  background-color: blue; 
+  background-color: #9f0f17; 
+}
+
+#button-2.pressed{
+  background-color: #ff4c4c;
 }
 
 #button-3{
   border-bottom-left-radius: 250px;
-  background-color: green;
-  
+  background-color: #cca707;
+}
+
+#button-3.pressed{
+  background-color: #fed93f;
 }
 
 #button-4{
   border-bottom-right-radius: 250px;
-  background-color: yellow;
+  background-color: #094a8f;
+}
+
+#button-4.pressed{
+  background-color: #1c8cff;
 }
 
 #button-4,#button-3{
@@ -123,8 +138,8 @@ nav{
   position: absolute;
   width: 250px;
   height: 250px;
-  background-color: orange;
-  border: solid 15px gray;
+  background-color: #935347;
+  border: solid 15px #64706c;
   margin: auto;
   right: 0px;
   left: 0px;
@@ -180,7 +195,7 @@ nav{
   width: 45%;
   height: 30%;
   margin: auto;
-  border: solid 3px gray;
+  border: solid 3px #c7ad88;
   border-radius: 50%;
   box-shadow: 1px 1px 1px 1px black;
   cursor: pointer;
@@ -191,11 +206,11 @@ nav{
 }
 
 .button.start{
-  background-color: red;
+  background-color: #ede9ce;
 }
 
 .button.strict{
-  background-color: yellow;
+  background-color: #ede9ce;
 }
 
 #count{
@@ -231,7 +246,8 @@ nav{
   width: 25%;
   margin-left:2%;
   margin-right:2%;
-  background-color: gray;
+  background-color: #c7ad88;
+  border-radius: 10%;
 }
 
 .switchable{
@@ -250,9 +266,9 @@ nav{
 }
 
 .switch > .switcher {
-  border: solid 2px gray;
+  border: solid 2px #c7ad88;
   width: 50%;
-  background-color: blue;
+  background-color: #935347;
   height: 100%;
   border-radius: 25%;
 }
@@ -264,8 +280,8 @@ nav{
 .light{
   width: 10%;
   height: 8%;
-  background-color: gray;
-  border: solid 2px gray;
+  background-color: #ede9ce;
+  border: solid 2px #ede9ce;
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -274,22 +290,15 @@ nav{
 
 .light.on{
   background-color: red;
+  border: solid 1px #c7ad88 !important;
 }
 
 .clickable{
   cursor: pointer;
 }
 
-.game-button.clickable:active{
-  background-color: black !important;
-}
-
 .pop-up{
   position: absolute;
   margin-top: 50px;
   z-index: 10;
-}
-
-.pressed{
-  background-color: black !important;
 }
